@@ -119,34 +119,52 @@ document.addEventListener("DOMContentLoaded", () => {
   btnCerrar.addEventListener("click", () => (modalExito.style.display = "none"));
 
   // --- DESCARGAR PDF ---
-  btnDescargar.addEventListener("click", () => {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
+// --- DESCARGAR PDF ---
+btnDescargar.addEventListener("click", () => {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
 
-    doc.setFontSize(14);
-    doc.text("REGISTRO DE ASISTENCIA", 14, 15);
-    doc.text("BANDA DE MÚSICA UE JUPAPINA", 14, 22);
-    doc.text("Prof. Humberto Yupanqui C.", 14, 29);
+  // --- Fecha y hora actual ---
+const ahora = new Date();
+const opcionesFecha = { day: '2-digit', month: '2-digit', year: 'numeric' };
+const opcionesHora = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+const fechaActual = ahora.toLocaleDateString('es-BO', opcionesFecha);
+const horaActual = ahora.toLocaleTimeString('es-BO', opcionesHora);
 
-    const columnas = Array.from(thead.querySelectorAll("th")).map(th => th.textContent);
-    const filasPDF = Array.from(tbody.querySelectorAll("tr")).map(tr =>
-      Array.from(tr.querySelectorAll("td")).map(td =>
-        td.querySelector("select") ? td.querySelector("select").value : td.textContent
-      )
-    );
+// --- Encabezado del PDF ---
+doc.setFontSize(14);
+doc.text("REGISTRO DE ASISTENCIA", 14, 15);
+doc.text("BANDA DE MÚSICA UE JUPAPINA", 14, 22);
+doc.text("Prof. Humberto Yupanqui C.", 14, 29);
 
-    doc.autoTable({
-      head: [columnas],
-      body: filasPDF,
-      startY: 36,
-      styles: { fontSize: 10 },
-      headStyles: { fillColor: [41, 128, 185], textColor: 255 },
-      theme: "grid"
-    });
+// --- Fecha y hora en una sola línea ---
+doc.setFontSize(10);
+doc.text(`Fecha y hora de descarga: ${fechaActual} ${horaActual}`, 14, 36);
 
-    doc.save("Asistencia_UE_Jupapina.pdf");
-    modalExito.style.display = "none";
+
+  // --- Datos de tabla ---
+  const columnas = Array.from(thead.querySelectorAll("th")).map(th => th.textContent);
+  const filasPDF = Array.from(tbody.querySelectorAll("tr")).map(tr =>
+    Array.from(tr.querySelectorAll("td")).map(td =>
+      td.querySelector("select") ? td.querySelector("select").value : td.textContent
+    )
+  );
+
+  doc.autoTable({
+    head: [columnas],
+    body: filasPDF,
+    startY: 48, // bajamos el inicio para no chocar con la fecha/hora
+    styles: { fontSize: 10 },
+    headStyles: { fillColor: [41, 128, 185], textColor: 255 },
+    theme: "grid"
   });
+
+  // --- Guardar PDF ---
+  const nombreArchivo = `Asistencia_UE_Jupapina_${fechaActual.replace(/\//g, '-')}.pdf`;
+  doc.save(nombreArchivo);
+  modalExito.style.display = "none";
+});
+
 
   window.addEventListener("click", event => {
     if (event.target === modalExito) modalExito.style.display = "none";
