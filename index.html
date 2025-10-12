@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Asistencia</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>REGITRO DE ASISTENCIA</h1>
+    <h1>BANDA DE MÚSICA UE JUPAPINA</h1>
+    <h1>Prof. Humberto Yupanqui C.</h1>
+
+    <form id="asistenciaForm">
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha" required>
+      <button type="button" id="agregarFecha">Agregar Fecha</button>
+    
+      <table id="tablaAsistencia">
+        <thead>
+          <tr>
+            <th>N°</th>
+            <th>Nombre Completo</th>
+            <th>Grado</th>
+            <!-- Fechas dinámicas -->
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Los estudiantes se agregan dinámicamente -->
+        </tbody>
+      </table>
+    <br>
+      <!-- Botón de envío con spinner -->
+      <div class="send-container">
+        <center>
+          <button type="submit" class="btn-registrar">Registrar y Enviar</button>
+        </center>
+        <div id="loading" class="loading" style="display:none;">
+          <span class="spinner"></span>
+          <span class="loading-text">⏳ Procesando tu envio...</span>
+        </div>
+      </div>
+    </form>
+    
+  </div>
+  <!-- Modal de éxito -->
+  <div id="modalExito" class="modal">
+    <div class="modal-content">
+      <h3>✅ Registro exitoso</h3>
+      <p>Se registró correctamente el seguimiento de estudiantes.</p>
+      <div class="modal-buttons">
+        <button id="btnDescargar">📄 Descargar PDF</button>
+        <button id="btnCerrar">❌ Cerrar</button>
+      </div>
+    </div>
+  </div>
+  <script src="lista.js"></script>
+</body>
+</html>
