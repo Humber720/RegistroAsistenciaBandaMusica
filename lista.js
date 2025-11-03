@@ -39,34 +39,38 @@ document.addEventListener("DOMContentLoaded", () => {
     { nombre: "CALLISAYA PAUCARA JHEREMY RICKY", grado: "SEXTO" },
     { nombre: "MAMANI YUJRA ARSENIO SEBASTIAN", grado: "SEXTO" },
     { nombre: "RAMIREZ MENDOZA CRISTIAN", grado: "SEXTO" },
-
+//SOLDADOS ESCOLTAS
     { nombre: "ZACARI PAUCARA LESLIE MAYLI", grado: "SEGUNDO" },
     { nombre: "ESPEJO ALANOCA KEYLA ALEIDIS", grado: "SEGUNDO" },
-    { nombre: "CORINA QUISPE JUAN FERNANDO", grado: "SEGUNDO" }, 
+    { nombre: "CORINA QUISPE JUAN FERNANDO", grado: "SEGUNDO" },
+    { nombre: "FLORES HUMEREZ JASIEL NOEMI", grado: "SEGUNDO" },
     { nombre: "QUISPE QUISPE LUZ NAYELLY", grado: "TERCERO" }, 
     { nombre: "CHINO COYO LAURA NOELIA", grado: "CUARTO" }, 
     { nombre: "ALVARADO CARVAJAL ALEXIS SANTIAGO", grado: "QUINTO" }, 
     { nombre: "QUISPE PAUCARA CLIVER ADEMAR", grado: "QUINTO" }, 
     { nombre: "LOPEZ CACHI ANELIZ", grado: "QUINTO" }, 
-    { nombre: "PAUCARA MAMANI ISRAEL", grado: "QUINTO" },  
+    { nombre: "PAUCARA MAMANI ISRAEL", grado: "QUINTO" }, 
+    { nombre: "FERRANO MOLLO EDSON DIEGO", grado: "QUINTO" }, 
     { nombre: "ANTEZANA LAURA SEBASTIAN DANIEL", grado: "SEXTO" }, 
     { nombre: "ARELLANO PAÑUNI ANTHONY JIMMY", grado: "SEXTO" }, 
     { nombre: "CASTILLO DIAZ KIMBERLY YESENIA", grado: "SEXTO" }, 
     { nombre: "CASTILLO PATZI CRISTIAN ANGEL", grado: "SEXTO" }, 
     { nombre: "SUXO CACERES MARITZA NICOL", grado: "SEXTO" }, 
-    { nombre: "VELASCO ULO CIELO ANAHI", grado: "SEXTO" }, 
-    { nombre: "YEVARA SILVA PAOLA NICOL", grado: "SEXTO" }, 
+    { nombre: "VELASCO ULO CIELO ANAHI", grado: "SEXTO" },
+    { nombre: "MAMANI CONDORI ZULEMA", grado: "SEXTO" }, 
+    { nombre: "YEVARA SILVA PAOLA NICOL", grado: "SEXTO" },
+    //GALLARDETES
     { nombre: "POMA QUISPE JULIAN NEYMAR", grado: "SEGUNDO" }, 
     { nombre: "ZAMBRANA OMONTE JOSE ANTONIO", grado: "SEGUNDO" }, 
     { nombre: "GUARACHI CARRILLO ALAN STYBEN", grado: "TERCERO" }, 
     { nombre: "MENDOZA MARCO ANTONIO", grado: "TERCERO" }, 
     { nombre: "ARCE SOLIZ ROY DAVID", grado: "TERCERO" }, 
-    { nombre: "SILLERICO FERNANDEZ SHODIN ALWA", grado: "SEGUNDO" }, 
+    { nombre: "SILLERICO FERNANDEZ SHODIN ALWA", grado: "SEGUNDO" },
+    //BANDERA
     { nombre: "CALLIZAYA PAUCARA ALISON MAYTE", grado: "PRIMERO" }, 
-    { nombre: "QUISPE CARRILLO ARACELI BRIANCA", grado: "PRIMERO" }, 
-    { nombre: "MAMANI CONDORI ZULEMA", grado: "SEXTO" }, 
+    { nombre: "QUISPE CARRILLO ARACELI BRIANCA", grado: "PRIMERO" },
+    //DANZA
     { nombre: "TORREZ ROJAS ZEYLA JHANELA", grado: "TERCERO" },
-    { nombre: "", grado: "" },  
   ];
 
   const urlSheetBest = "https://api.sheetbest.com/sheets/a3821c85-4ed7-4cb8-907d-511764a94fb9";
